@@ -20,15 +20,8 @@ export class Notification {
   private props: NotificationProps;
 
   constructor(props: NotificationConstructorProps) {
-    const createdAtDate = props.createdAt ?? new Date();
-
-    const notificationProps = {
-      ...props,
-      createdAt: createdAtDate,
-    };
-
     this._id = randomUUID();
-    this.props = notificationProps;
+    this.props = this.buildNotificationProps(props);
   }
 
   public set recipientId(recipientId: string) {
@@ -73,5 +66,16 @@ export class Notification {
 
   public get id() {
     return this._id;
+  }
+
+  private buildNotificationProps(props: NotificationConstructorProps) {
+    const createdAtDate = props.createdAt ?? new Date();
+
+    const notificationProps = {
+      ...props,
+      createdAt: createdAtDate,
+    };
+
+    return notificationProps;
   }
 }
