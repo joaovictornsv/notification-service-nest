@@ -1,7 +1,7 @@
 import { Replace } from 'src/helpers/Replace';
 import { Content } from './content';
 
-export interface NotificationProps {
+interface NotificationProps {
   recipientId: string;
   content: Content;
   category: string;
