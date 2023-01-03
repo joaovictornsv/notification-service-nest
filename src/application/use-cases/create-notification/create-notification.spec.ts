@@ -1,8 +1,8 @@
-import { CreateNotification } from './create-notification';
+import { CreateNotificationUseCase } from './create-notification';
 
 describe('Create notification', () => {
   it('should be able to create a notification', () => {
-    const createNotification = new CreateNotification();
+    const createNotification = new CreateNotificationUseCase();
 
     const request = {
       recipientId: 'example-recipient-id',

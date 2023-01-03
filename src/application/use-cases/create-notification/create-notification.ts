@@ -1,18 +1,22 @@
+import { Injectable } from '@nestjs/common';
 import { Content } from '../../entities/notification/content';
 import { Notification } from '../../entities/notification/notification';
 
-interface CreateNotificationRequest {
+interface CreateNotificationUseCaseRequest {
   recipientId: string;
   content: string;
   category: string;
 }
 
-interface CreateNotificationResponse {
+interface CreateNotificationUseCaseResponse {
   notification: Notification;
 }
 
-export class CreateNotification {
-  execute(request: CreateNotificationRequest): CreateNotificationResponse {
+@Injectable()
+export class CreateNotificationUseCase {
+  execute(
+    request: CreateNotificationUseCaseRequest,
+  ): CreateNotificationUseCaseResponse {
     const contentInstance = new Content(request.content);
 
     const notification = new Notification({
