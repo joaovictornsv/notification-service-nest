@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { Content } from '../../entities/notification/content';
-import { Notification } from '../../entities/notification/notification';
+import { Content } from '../../../entities/notification/content';
+import { Notification } from '../../../entities/notification/notification';
 
 interface CreateNotificationUseCaseRequest {
   recipientId: string;
