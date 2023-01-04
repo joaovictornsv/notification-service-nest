@@ -12,7 +12,7 @@ export class SendNotificationController {
   ) {}
 
   @Post()
-  async createAndSendNotification(@Body() body: CreateNotificationBody) {
+  async handle(@Body() body: CreateNotificationBody) {
     const notification = this.createNotificationInstance(body);
 
     await this.sendNotificationUseCase.execute({ notification });
