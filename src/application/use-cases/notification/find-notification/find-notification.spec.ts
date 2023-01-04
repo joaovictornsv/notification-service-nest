@@ -1,6 +1,6 @@
 import { Content } from '../../../entities/notification/content';
 import { Notification } from '../../../entities/notification/notification';
-import { InMemoryNotificationsRepository } from '../../../../../test/repositories/memory/in-memory-notifications-repository';
+import { InMemoryNotificationsRepository } from '@test/repositories/memory/in-memory-notifications-repository';
 import { FindNotificationUseCase } from './find-notification';
 import { NotificationNotFound } from '../../../use-cases/errors/notification-not-found';
 

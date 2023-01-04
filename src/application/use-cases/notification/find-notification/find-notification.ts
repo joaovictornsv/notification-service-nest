@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { NotificationsRepository } from '../../../repositories/notification-repository';
-import { Notification } from '../../../../application/entities/notification/notification';
-import { NotificationNotFound } from '../../../../application/use-cases/errors/notification-not-found';
+import { Notification } from '@application/entities/notification/notification';
+import { NotificationNotFound } from '@application/use-cases/errors/notification-not-found';
 
 interface FindNotificationUseCaseRequest {
   notificationId: string;

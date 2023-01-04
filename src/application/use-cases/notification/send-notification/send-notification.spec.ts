@@ -1,6 +1,6 @@
 import { Content } from '../../../entities/notification/content';
 import { Notification } from '../../../entities/notification/notification';
-import { InMemoryNotificationsRepository } from '../../../../../test/repositories/memory/in-memory-notifications-repository';
+import { InMemoryNotificationsRepository } from '@test/repositories/memory/in-memory-notifications-repository';
 import { SendNotificationUseCase } from './send-notification';
 
 describe('Send notification', () => {

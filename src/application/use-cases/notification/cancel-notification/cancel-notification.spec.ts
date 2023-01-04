@@ -1,6 +1,4 @@
-import { Content } from '../../../entities/notification/content';
-import { Notification } from '../../../entities/notification/notification';
-import { InMemoryNotificationsRepository } from '../../../../../test/repositories/memory/in-memory-notifications-repository';
+import { InMemoryNotificationsRepository } from '@test/repositories/memory/in-memory-notifications-repository';
 import { CancelNotificationUseCase } from './cancel-notification';
 import { CreateNotificationUseCase } from '../create-notification/create-notification';
 import { SendNotificationUseCase } from '../send-notification/send-notification';
