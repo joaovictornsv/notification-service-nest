@@ -11,14 +11,16 @@ describe('Unread notification', () => {
     );
 
     // Creating notification instance and add to in-memory repository
-    const notification = makeNotification();
+    const notification = makeNotification({
+      readAt: new Date(),
+    });
     await memoryNotificationsRepository.create(notification);
 
     // Functional Test
     const request = { notification };
     await unreadNotification.execute(request);
 
-    expect(notification.readAt).toEqual(null);
-    expect(memoryNotificationsRepository.notifications[0].readAt).toEqual(null);
+    expect(notification.readAt).toBeNull();
+    expect(memoryNotificationsRepository.notifications[0].readAt).toBeNull();
   });
 });
