@@ -8,7 +8,7 @@ interface FindNotificationUseCaseRequest {
 }
 
 interface FindNotificationUseCaseResponse {
-  notification: Notification | null;
+  notification: Notification;
 }
 
 @Injectable()
