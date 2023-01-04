@@ -1,6 +1,6 @@
 import { InMemoryNotificationsRepository } from '@test/repositories/memory/in-memory-notifications-repository';
 import { ReadNotificationUseCase } from './read-notification';
-import { makeNotification } from '@test/factories/notification-factory';
+import { NotificationFactory } from '@test/factories/notification-factory';
 
 describe('Read notification', () => {
   it('should be able to read a notification', async () => {
@@ -11,7 +11,7 @@ describe('Read notification', () => {
     );
 
     // Creating notification instance and add to in-memory repository
-    const notification = makeNotification();
+    const notification = NotificationFactory.makeNotification();
     await memoryNotificationsRepository.create(notification);
 
     // Functional Test

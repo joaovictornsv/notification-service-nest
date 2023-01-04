@@ -1,9 +1,7 @@
-import { Content } from '../../../entities/notification/content';
-import { Notification } from '../../../entities/notification/notification';
 import { InMemoryNotificationsRepository } from '@test/repositories/memory/in-memory-notifications-repository';
 import { FindNotificationUseCase } from './find-notification';
 import { NotificationNotFound } from '../../../use-cases/errors/notification-not-found';
-import { makeNotification } from '@test/factories/notification-factory';
+import { NotificationFactory } from '@test/factories/notification-factory';
 
 describe('Find notification', () => {
   it('should be able to find a notification by id', async () => {
@@ -14,7 +12,7 @@ describe('Find notification', () => {
     );
 
     // Creating notification instance and add to repository
-    const notification = makeNotification();
+    const notification = NotificationFactory.makeNotification();
     await memoryNotificationsRepository.create(notification);
 
     // Functional Test

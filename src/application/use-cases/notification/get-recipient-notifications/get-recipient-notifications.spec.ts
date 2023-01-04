@@ -1,7 +1,7 @@
 import { InMemoryNotificationsRepository } from '@test/repositories/memory/in-memory-notifications-repository';
 import { GetRecipientNotificationsUseCase } from './get-recipient-notifications';
 import { SendNotificationUseCase } from '../send-notification/send-notification';
-import { makeNotification } from '@test/factories/notification-factory';
+import { NotificationFactory } from '@test/factories/notification-factory';
 
 describe('Get recipient notifications', () => {
   it('should be able to get notifications by recipient id', async () => {
@@ -15,11 +15,14 @@ describe('Get recipient notifications', () => {
     );
 
     const recipientId = 'example-recipient-id';
-    const notificationWithRecipientId = makeNotification({ recipientId });
-
-    const notificationWithDifferentRecipientId = makeNotification({
-      recipientId: 'strange-recipient-id',
+    const notificationWithRecipientId = NotificationFactory.makeNotification({
+      recipientId,
     });
+
+    const notificationWithDifferentRecipientId =
+      NotificationFactory.makeNotification({
+        recipientId: 'strange-recipient-id',
+      });
 
     await sendNotificationUseCase.execute({
       notification: notificationWithRecipientId,

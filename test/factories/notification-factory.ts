@@ -6,13 +6,15 @@ import {
 
 type Override = Partial<NotificationProps>;
 
-export function makeNotification(override: Override = {}) {
-  const notification = new Notification({
-    category: 'social',
-    content: new Content('example-content'),
-    recipientId: 'strange-recipient-id',
-    ...override,
-  });
+export class NotificationFactory {
+  static makeNotification(override: Override = {}) {
+    const notification = new Notification({
+      category: 'social',
+      content: new Content('example-content'),
+      recipientId: 'strange-recipient-id',
+      ...override,
+    });
 
-  return notification;
+    return notification;
+  }
 }

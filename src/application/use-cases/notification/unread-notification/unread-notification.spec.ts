@@ -1,6 +1,6 @@
 import { InMemoryNotificationsRepository } from '@test/repositories/memory/in-memory-notifications-repository';
 import { UnreadNotificationUseCase } from './unread-notification';
-import { makeNotification } from '@test/factories/notification-factory';
+import { NotificationFactory } from '@test/factories/notification-factory';
 
 describe('Unread notification', () => {
   it('should be able to unread a notification', async () => {
@@ -11,7 +11,7 @@ describe('Unread notification', () => {
     );
 
     // Creating notification instance and add to in-memory repository
-    const notification = makeNotification({
+    const notification = NotificationFactory.makeNotification({
       readAt: new Date(),
     });
     await memoryNotificationsRepository.create(notification);
