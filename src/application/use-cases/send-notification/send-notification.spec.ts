@@ -18,9 +18,10 @@ describe('Send notification', () => {
       content: contentInstance,
       recipientId: 'example-recipient-id',
     });
+    const request = { notification };
 
     // Functional Test
-    await sendNotification.execute(notification);
+    await sendNotification.execute(request);
 
     expect(memoryNotificationsRepository.notifications).toHaveLength(1);
     expect(memoryNotificationsRepository.notifications[0]).toEqual(
