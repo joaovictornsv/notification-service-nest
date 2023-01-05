@@ -16,4 +16,5 @@ const config: Config = {
   }),
 };
 
+// ts-prune-ignore-next
 export default config;
